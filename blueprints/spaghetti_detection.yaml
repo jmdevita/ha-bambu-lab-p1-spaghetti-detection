@@ -190,7 +190,7 @@ action:
                     - !input printer_chamber_light
           - if:
               - condition: template
-                value_template: "{{ as_timestamp(now()) - as_timestamp(states(PRINTER_CAMERA_IMG_VAR)) >= 30 }}"
+                value_template: "{{ as_timestamp(now()) - as_timestamp(states[PRINTER_CAMERA_IMG_VAR].last_changed) >= 30 }}"
             then:
               - service: homeassistant.reload_config_entry
                 data: { }
