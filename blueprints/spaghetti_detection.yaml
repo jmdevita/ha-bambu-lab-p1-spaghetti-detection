@@ -82,7 +82,9 @@ blueprint:
         entity:
           filter:
             - integration: bambu_lab
-              domain: image
+              domain: 
+                - image
+                - camera
     printer_pause_button:
       name: Printer Pause Button Entity
       description: Bambu Lab printer pause button entity
